@@ -1,0 +1,73 @@
+<!-- File Prologue:
+ * Name:            Darren Moody
+ * Class:           CS2550-001
+ * Professor:       Dr. Brian Durney
+ * Assignment:      Assignment 2,3,4,5,6, Final
+ * File Name:       gameGrid.html
+ * 
+ * Description:     The gameGrid file for my Sudoku project
+ * -->
+
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Sudoku CS2550</title>
+        <link rel="stylesheet" href="style.css" />
+
+    </head>
+
+    <body onload="startMove()">
+        <div id="animDiv">
+            <img id="animImg" src="sudokuImg.png"></img>
+        </div>
+        <br></br>
+        <br></br>
+        <div data-role="page" id="sudoku_page"> 
+            <table class="menu">
+                <tr>
+                    <td>
+                        <select class="difficulty" name="difficulty" id="difficulty" onchange="handleDiff(this.value)">
+                            <option value="default" >Select difficulty to start</option>
+                            <option value="30">Easy</option>
+                            <option value="40">Medium</option>
+                            <option value="55">Hard</option>
+                            <option value="60">Very Hard</option>
+                            <option value="65">Extra Hard</option>
+                            <option value="3">Debug Test</option>
+                        </select>
+                    </td>
+                    <td><button onclick="newGameClick()" type="button" class="button" id="new_game">New Game</button></td>
+                    <td><button type="button" class="button" id="check">Check Answers</button></td>
+                    <td><button type="button" class="button" id="clear">Clear</button></td>
+                    <td><button type="button" class="button" id="solve">Solve Puzzle</button></td>
+                    <td><text class = "time" id ="time"></text></td>
+                </tr>
+            </table>
+            <div id="grid"></div>
+            <div id="loginfo"></div>
+            <br>
+            <div type="input" class="textfielddiv" id="textfielddiv">
+                <input class="textfield" type="text" id="textfield" value="Welcome to Sudoku by Darren Moody! - Select difficulty to begin">
+                <br>
+                <br>
+            </div>
+            <table class="keypad" >
+                <tr>
+                    <td><div id="k0">&nbsp;</div></td><td ><div id="k1">&nbsp;</div></td><td><div id="k2">&nbsp;</div></td><td ><div id="k3">&nbsp;</div></td><td ><div id="k4">&nbsp;</div></td><td ><div id="k5">&nbsp;</div></td><td ><div id="k6">&nbsp;</div></td><td ><div id="k7">&nbsp;</div></td><td ><div id="k8">&nbsp;</div></td><td ><div id="k9">&nbsp;</div></td>
+                </tr>
+            </table>
+        </div>	
+		<audio id="win" src="Cheering1.wav" preload="auto" />
+		<audio id="yes" src="Yes.wav" preload="auto" />
+		<audio id="no" src="OhNo.wav" preload="auto" />
+        <script type="text/javascript" src="jquery-1.4.js" ></script>
+        <script type="text/javascript" src="SudokuModel.js" ></script>
+        <script type="text/javascript" src="SudokuView.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+
+    </body>
+</html>

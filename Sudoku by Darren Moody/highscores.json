@@ -1,0 +1,27 @@
+{
+    "Easy": {
+        "name": "Harpo",
+        "seconds": "37",
+        "minutes": "0"
+    },
+    "Medium": {
+        "name": "Bilbo",
+        "seconds": "27",
+        "minutes": "2"
+    },
+    "Hard": {
+        "name": "Groucho",
+        "seconds": "48",
+        "minutes": "6"
+    },
+    "Very_Hard": {
+        "name": "Luke",
+        "seconds": "56",
+        "minutes": "9"
+    },
+    "Extra_Hard": {
+        "name": "Sam",
+        "seconds": "27",
+        "minutes": "12"
+    }
+}

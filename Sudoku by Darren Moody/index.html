@@ -1,0 +1,163 @@
+<!-- File Prologue:
+ * Name:            Darren Moody
+ * Class:           CS2550-001
+ * Professor:       Dr. Brian Durney
+ * Assignment:      Assignment 2,3,4,5,6, Final
+ * File Name:       index.html
+ * 
+ * Description:     The index file for my Sudoku project
+ * -->
+
+<!DOCTYPE html>
+<!--OFFICIAL SUBMISSION VERSION-->
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Preliminary Software Design</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="SudokuView.js"></script>
+        <script src="SudokuModel.js"></script>
+    </head>
+
+    <body>
+        <h1>Preliminary Software Design</h1>
+
+        <h2>Sudoku</h2>
+
+        <p>
+            Darren Moody<br>
+            CS2550<br>
+            Dr. Durney
+        </p><hr>
+		
+		<center>
+        <h3><i>Click on the button below to LOG IN and Play Sudoku</i> <br>!!!!Login removed for Final Project as per instructions!!!!
+		<br>I did leave the animation in the game since it indicates what game you are playing.
+		<br>CHOOSE "DEBUG TEST" in difficulties for an easily solvable puzzle to test Winning the game.</h3>
+		<a href="gameGrid.html"><input type="button" class="button" value="PLAY SUDOKU!" id="buttons"/></a><!--onclick="checkCookie()"-->
+		</center>
+		<div id="login"></div>
+		<p><img src="grid_example.png"></p>  
+	
+		<p><a  href="documentation.html"><h2>Go To Documentation.html</h2></a></p>
+		<br><hr>
+		<p><a  href="checkpoint.html"><h2>My Current Checkpoint.html</h2></a></p>
+		<br><hr>
+        <h2>For my Game project using a Grid</h2>
+        <h2>I will be creating my own version of the game Sudoku!</h2>
+        <h2>This version will use the MVC design pattern and will contain a Model and a View</h2>
+        <ul>
+            <li>The Model contains information about the game-play, state of the game, the parameters and objects <br>
+                (game pieces) of the game.</li>
+            <ul>
+                <li>For the case of Sudoku, I will have cell objects, interactive buttons, and a drop-down menu.</li>
+                <li>Each object will contain parameters as needed for the gameplay.</li>
+                <li>The "game pieces" will be numbers contained within the cells of a table.</li>
+                <li>The Model for this game will contain the information for all of these things.</li>
+            </ul>
+        </ul>
+        <ul>
+            <li>The View contains functions, parameters and information about how the game is displayed.</li>		
+            <ul>
+                <li>The Controller will be contained within the View.</li>	
+                <li>"For this assignment, don't worry about separating the controller from the view."</li>
+                <li>In a nutshell, the view produces the game interface, or game-board design.</li>
+            </ul>
+        </ul>
+
+    
+    <h3>If you wish to learn more about Sudoku, <br>you can click below:</h3>
+    <p><a href="http://www.sudokuessentials.com/how_to_play_sudoku.html"><h2>Sudoku Essentials(external link)</h2></a></p>
+
+    <p>For my Sudoku game I will be generating a Sudoku table that is made up of 81 separate cell objects 
+        in a 9 x 9 table. The 9 x 9 table will be made up of 9 separate 3 x 3 tables, which I will call mini-grids.
+        My functions for generating the table will be passing objects as parameters, which objects 
+        will contain the parameters for creating the table size, as well as states contained in arrays. The 
+        parameters contained in the objects will be shown below.
+    <h3>Playing this Version of Sudoku</h3>
+    <ul>
+        <li>The player will see a blank game-grid and other elements of the game's interface</li>
+        <li>The player must then select a difficulty from the drop-down list of difficulties and a new puzzle of that difficulty will auto-load on selection.</li>
+        <li>A certain amount of the blank cells on the game-grid will be filled in automatically.</li>
+        <li>The player can select any empty-cells on the game-grid and possible correct answers for that cell will be given in a separate clickable grid called the keypad.</li>
+        <li>The player clicks a check answers to check their answers.</li>
+        <li>If all the answers are correct a message will say "everything is good so far", or if there is a conflict the conflicting cells will be highlighted in red".</li>
+        <li>Once all of the numbers have been filled in and all of the answers are correct the game is over and a "you win" message will display.</li>
+        <li><h3>Winning the game: </h3></li>
+        <li>In order to win at Sudoku you must enter the numbers 1 through 9 in each row, column, and mini-grid (3 x 3 table<br>
+            within the larger table making up the entire game board). You may enter the numbers in any order but you cannot<br>
+            repeat the same number twice in a given row, column, or mini-grid. For example, if there is already a 6 in a given row,<br>
+            then there must not be another 6 in the same horizontal row (across the entire board), vertical column (across the entire board)<br>
+            or in the same 3 x 3 mini-grid, or else one of the sixes must be in the wrong place...this is called a "conflict"!!! <br>
+            Once you have filled in the entire Sudoku Game Board with numbers 1 - 9, having no conflicts, YOU WIN!</li>
+    </ul><hr>	   
+
+    <h3>The Model (SudokuModel.java)</h3>
+    <ul>
+        <li>NUM_CELLS is the number of cells on the gameboard (81, 9 * 9)</li>
+        <li>Numbers possible for each cell are (1 - 9)</li>
+        <li>A 0 will represent a blank cell </li>
+        <li>I will make an attempt at generating new game puzzles.</li>
+        <li>There will be 4 or 5 difficulties to choose from ranging from easy to very-hard.</li>
+    </ul>
+    <h3>Objects (for assignment 3)</h3>
+    <ul>
+        <li>SudokuModel</li>
+        <ul>
+            <li>Contains information about the model</li>
+            <ul>
+                <li>There are 9 mini grids of 3 x 3 each within one large grid of 9 x 9. </li>
+            </ul>
+        </ul>
+        <li>GridCellObject</li>
+        <ul>
+            <li>Contains information about a given cell</li>
+            <ul>
+                <li>For example: {"inUse": false, "number": 7}</li>
+            </ul>
+        </ul>
+    </ul>
+    <h3>Sudoku Game Board</h3>
+    <ul>
+        <li>New Game - Button</li>
+        <ul>
+            <li>Creates a new game-grid.</li>
+        </ul>
+    </ul>
+    <ul>
+        <li>Choose Difficulty</li>
+        <ul>
+            <li>Will give a <strong>drop down select list with difficulty options.</strong></li>
+            <li>I will produce the difficulty list using "select" and "option" html tags.</li>
+        </ul>
+    </ul>
+    <ul>
+        <li>Numbers(my "game pieces")</li>
+        <ul>
+            <li>The grid will be populated with numbers</li>
+            <li>The element objects associated with each number must have listeners to sense when they've been clicked</li>
+        </ul>
+    </ul>
+    <strong>Functions</strong>
+    <ul>
+        <li>CreateGameGridInHTML() will generate the html for the grid</li>
+        <li>CreateGameBoardInHTML() will fill in the table with .
+            <ul>
+                <li>I will have an array of 81 numbers. I will populate the puzzle with this array and then remove a certain amount of numbers based on the chosen difficulty level</li>
+            </ul>
+        </li>
+        <li>Need a buildGameGrid() function which will create the table in the model</li>	
+        <li>I will need to handle each button with an onClick function in JavaScript - example function buttonName.click(event)</li>
+        <li>I will also handle cell click events in the same way as the buttons</li>
+        <li>I will need methods to handle mouse overs and selections
+            <ul>
+                <li>MouseOver or MouseClick functions will take grid cell events as parameters.</li>
+            </ul>
+        </li>
+        <li>MouseOver or MouseClick functions should have some nice transitions for cells in the grid (shading or something)</li>
+        <li>MouseOver or MouseClick functions should return the value in the cell that was selected</li>
+    </ul><hr>
+
+</body>
+</html>
