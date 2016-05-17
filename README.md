@@ -5,8 +5,13 @@ This is a Sudoku puzzle game that I created for a Web Programming class at UVU. 
 <html><head>
 <meta name="viewport" content="width=device-width">
 <style>
-<td> {border: thin solid grey; padding: 3px;}
-<table> {border-collapse: collapse;}
+.td {
+border: thin solid grey; 
+padding: 3px;
+}
+.table {
+border-collapse: collapse;
+}
 </style>
 </head>
 
